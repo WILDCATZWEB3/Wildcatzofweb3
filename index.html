@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILDCATZ OF WEB3 - Contact</title>
+    
+    <!-- Import Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, red, cyan);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        #3d-logo {
+            width: 100%;
+            height: 300px;
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .social-links a {
+            display: block;
+            margin: 10px;
+            padding: 10px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: yellow;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="3d-logo"></div> 
+        <h1 id="user-name"></h1>
+        <p>Email: <a id="user-email" style="color: cyan;"></a></p>
+
+        <div class="social-links">
+            <div class="section-title">Social Media Links</div>
+            <div id="social-links-container"></div>
+        </div>
+
+        <div class="section-title">Professional Summary</div>
+        <p id="summary"></p>
+
+        <div class="section-title">Experience</div>
+        <div id="experience"></div>
+
+        <div class="section-title">Skills</div>
+        <ul id="skills"></ul>
+
+        <div class="section-title">Languages</div>
+        <p id="languages"></p>
+    </div>
+
+    <script>
+        // User Information
+        const userInfo = {
+            name: "WILDCATZ OF WEB3",
+            email: "olasnetworking@gmail.com",
+            socialMedia: [
+                { name: "Twitter/X", url: "https://x.com/WILDCATZ_WEB3" },
+                { name: "GitHub", url: "https://github.com/WILDCATZWEB3" },
+                { name: "Telegram (Personal)", url: "https://t.me/WILDCATZOFWEB3" },
+                { name: "Telegram (Bot)", url: "https://t.me/Squadscambot" },
+                { name: "Discord", url: "https://discord.gg/KMNhWKNk" }
+            ],
+            summary: "Content Writer | Community Manager | Moderator | Zealy Manager | Graphic Designer (3D & 2D) | Python & JavaScript Developer",
+            experience: [
+                { role: "🚀 Telegram Bot Builder", company: "G Learning Network", year: "2022", details: [
+                    "Built & deployed a bot for group security.",
+                    "Prevented unauthorized link sharing.",
+                    "Welcomed new members automatically."
+                ]},
+                { role: "📢 Community Manager", company: "Grrm Coin Channel", year: "2023", details: [
+                    "Managed & guided the community.",
+                    "Ensured security and topic relevance."
+                ]},
+                { role: "✍ Content Writer", company: "Aquacoin, Gamp Gaming, ZK Business", year: "2024", details: [
+                    "Created engaging content.",
+                    "Worked with influencers & KOLs."
+                ]},
+                { role: "🎯 Zealy Task Moderator", company: "", year: "", details: [
+                    "Managed Zealy quests for Aquacoin."
+                ]},
+                { role: "💻 Web Developer", company: "G_PLATFORM", year: "2025", details: [
+                    "Developed & maintained the platform."
+                ]}
+            ],
+            skills: ["Community Moderation", "Website & Telegram Bot Development", "Zealy Quests & Account Management"],
+            languages: ["English", "Arabic"]
+        };
+
+        // Fill in user info dynamically
+        document.getElementById("user-name").textContent = userInfo.name;
+        document.getElementById("user-email").textContent = userInfo.email;
+        document.getElementById("user-email").href = `mailto:${userInfo.email}`;
+
+        // Add social media links dynamically
+        const socialLinksContainer = document.getElementById("social-links-container");
+        userInfo.socialMedia.forEach(social => {
+            const link = document.createElement("a");
+            link.href = social.url;
+            link.textContent = social.name;
+            link.target = "_blank";
+            socialLinksContainer.appendChild(link);
+        });
+
+        // Add professional summary
+        document.getElementById("summary").textContent = userInfo.summary;
+
+        // Add experience dynamically
+        const experienceContainer = document.getElementById("experience");
+        userInfo.experience.forEach(exp => {
+            const expBlock = document.createElement("div");
+            expBlock.innerHTML = `<p><b>${exp.role}</b> (${exp.company}, ${exp.year})</p>`;
+            exp.details.forEach(detail => {
+                const detailItem = document.createElement("p");
+                detailItem.textContent = `- ${detail}`;
+                expBlock.appendChild(detailItem);
+            });
+            experienceContainer.appendChild(expBlock);
+        });
+
+        // Add skills dynamically
+        const skillsContainer = document.getElementById("skills");
+        userInfo.skills.forEach(skill => {
+            const skillItem = document.createElement("li");
+            skillItem.textContent = skill;
+            skillsContainer.appendChild(skillItem);
+        });
+
+        // Add languages dynamically
+        document.getElementById("languages").textContent = userInfo.languages.join(" | ");
+
+        // Load 3D Logo with Three.js
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(300, 300);
+        document.getElementById("3d-logo").appendChild(renderer.domElement);
+
+        const light = new THREE.AmbientLight(0xffffff, 1);
+        scene.add(light);
+
+        const loader = new THREE.GLTFLoader(); loader.load('catz.glb', 
+    function(gltf) { 
+        console.log("✅ Model loaded successfully!");  
+        const model = gltf.scene; scene.add(model); 
+        model.position.set(0, -1, 0); model.scale.set(1.2, 1.2, 1.2); 
+        camera.position.z = 3; function animate() {
+            requestAnimationFrame(animate); model.rotation.y += 0.01; 
+            renderer.render(scene, camera);
+        }
+        animate();
+    },
+    function(xhr) { console.log(`🔄 Loading: ${(xhr.loaded / xhr.total * 
+        100).toFixed(2)}%`);
+    },
+    function(error) { console.error("❌ Error loading model:", error);
+    }
+);
+</script>
+</body> </html>
