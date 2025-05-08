@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WILDCATZ OF WEB3 - Contact</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>WILDCATZ OF WEB3 - Portfolio</title>
 
     <!-- Import Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -64,6 +64,10 @@
             margin-top: 20px;
             text-decoration: underline;
         }
+
+        a {
+            word-break: break-word;
+        }
     </style>
 </head>
 <body>
@@ -89,6 +93,12 @@
 
     <div class="section-title">Languages</div>
     <p id="languages"></p>
+
+    <div class="section-title">Proof of Work</div>
+    <p><a href="https://t.me/WILDCATZPOW" target="_blank" style="color: cyan;">Telegram Proof of Work</a></p>
+
+    <div class="section-title">Resume (PDF)</div>
+    <p><a href="wildcatzofweb3_resume.pdf" download style="color: cyan;">Download My Resume</a></p>
 </div>
 
 <script>
@@ -102,36 +112,39 @@
             { name: "Discord", url: "https://discord.gg/GMtmHHqK" },
             { name: "Portfolio", url: "https://wildcatzofweb3.vercel.app" }
         ],
-        summary: "Web3 Marketer | Project Manager | Community Manager | Ambassador | Content Writer | Graphic Designer | Community Builder | Moderator | Telegram Bot Developer",
+        summary: "Web3 Marketer | Community Manager | Project Manager | Ambassador | Content Writer | Graphic Designer | Moderator | Telegram Bot Developer | Community Builder. I help projects scale by building ambassador teams, executing growth campaigns, hosting X Spaces, and creating strong community engagement across Telegram, Discord, and X. I offer strategic planning, brand voice, content creation, and grassroots marketing execution tailored to Web3.",
         experience: [
             {
                 role: "Marketing Lead", company: "StabilityXAI", year: "2025", details: [
-                    "Led ambassador recruitment and community growth.",
-                    "Hosted X Spaces and boosted market cap from $13K to $180K.",
-                    "Planned and executed marketing campaigns."
+                    "Grew project from $13K to $180K market cap through full-stack marketing initiatives.",
+                    "Built ambassador network of 15+ skilled creatives: content writers, shillers, raiders, designers, mods.",
+                    "Hosted consistent X Spaces to onboard users and build investor trust."
                 ]
             },
             {
                 role: "Marketing Lead", company: "Dread Network", year: "2024–2025", details: [
-                    "Managed outreach and community building for ADBS flight project.",
-                    "Developed content and coordinated communications."
+                    "Led awareness for the first ADBS-powered free-flight network.",
+                    "Ran Twitter campaigns, Spaces, and guerrilla engagement strategies.",
+                    "Developed community storytelling and helped shape early Web3 narratives."
                 ]
             },
             {
                 role: "Ambassador", company: "CoinSwap & AquaCoin", year: "2024–Present", details: [
-                    "Created content and participated in community engagement.",
-                    "Worked with KOLs and supported promotional strategies."
+                    "Created and shared content, memes, and threads.",
+                    "Supported ambassador sessions and giveaways.",
+                    "Amplified campaigns across social platforms."
                 ]
             },
             {
-                role: "Content Writer & Mod", company: "Gamp Gaming & Grrm Coin", year: "2023–2024", details: [
-                    "Wrote campaign content and moderated discussions."
+                role: "Content Writer & Moderator", company: "Gamp Gaming & Grrm Coin", year: "2023–2024", details: [
+                    "Crafted content for engagement and retention.",
+                    "Moderated channels to ensure safety and relevance."
                 ]
             },
             {
                 role: "Telegram Bot Developer", company: "G Learning Network", year: "2022", details: [
-                    "Built and maintained a group security bot.",
-                    "Auto-welcomed members and filtered harmful content."
+                    "Built a bot to secure group chats and automate greetings.",
+                    "Filtered harmful links and ensured group safety."
                 ]
             }
         ],
@@ -192,7 +205,6 @@
     const loader = new THREE.GLTFLoader();
     loader.load('catz.glb',
         function(gltf) {
-            console.log("✅ Model loaded successfully!");
             const model = gltf.scene;
             scene.add(model);
             model.position.set(0, -1, 0);
@@ -207,10 +219,10 @@
             animate();
         },
         function(xhr) {
-            console.log(`🔄 Loading: ${(xhr.loaded / xhr.total * 100).toFixed(2)}%`);
+            console.log(`Loading: ${(xhr.loaded / xhr.total * 100).toFixed(2)}%`);
         },
         function(error) {
-            console.error("❌ Error loading model:", error);
+            console.error("Error loading model:", error);
         }
     );
 </script>
