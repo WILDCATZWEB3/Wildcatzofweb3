@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>WILDCATZ OF WEB3 - Portfolio</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-
     <style>
         body {
             background: linear-gradient(135deg, red, cyan);
@@ -28,11 +25,6 @@
             border-radius: 10px;
             width: 90%;
             max-width: 500px;
-        }
-
-        #3d-logo {
-            width: 100%;
-            height: 300px;
         }
 
         h1 {
@@ -67,12 +59,19 @@
         a {
             word-break: break-word;
         }
+
+        .logo-img {
+            width: 180px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div id="3d-logo"></div>
+    <img src="62633.jpeg" alt="Wildcatz Logo" class="logo-img" />
     <h1 id="user-name"></h1>
     <p>Email: <a id="user-email" style="color: cyan;"></a></p>
 
@@ -183,39 +182,7 @@
     });
 
     document.getElementById("languages").textContent = userInfo.languages.join(" | ");
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(300, 300);
-    document.getElementById("3d-logo").appendChild(renderer.domElement);
-
-    const light = new THREE.AmbientLight(0xffffff, 1);
-    scene.add(light);
-
-    const loader = new THREE.GLTFLoader();
-    loader.load('catz.glb',
-        function(gltf) {
-            const model = gltf.scene;
-            scene.add(model);
-            model.position.set(0, -1, 0);
-            model.scale.set(1.2, 1.2, 1.2);
-            camera.position.z = 3;
-
-            function animate() {
-                requestAnimationFrame(animate);
-                model.rotation.y += 0.01;
-                renderer.render(scene, camera);
-            }
-            animate();
-        },
-        function(xhr) {
-            console.log(`Loading: ${(xhr.loaded / xhr.total * 100).toFixed(2)}%`);
-        },
-        function(error) {
-            console.error("Error loading model:", error);
-        }
-    );
 </script>
+
 </body>
 </html>
