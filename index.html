@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>WILDCATZ OF WEB3 - Portfolio</title>
 
-    <!-- Import Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 
@@ -112,17 +111,17 @@
             { name: "Discord", url: "https://discord.gg/GMtmHHqK" },
             { name: "Portfolio", url: "https://wildcatzofweb3.vercel.app" }
         ],
-        summary: "Web3 Marketer | Community Manager | Project Manager | Ambassador | Community Builder. I help projects scale by building ambassador teams, executing growth campaigns, hosting X Spaces, and creating strong community engagement across Telegram, Discord, and X. I offer strategic planning, brand voice, content creation, and grassroots marketing execution tailored to Web3.",
+        summary: "Web3 Marketer | Project Manager | Community Manager | Community Builder | Ambassador. I help projects grow by building ambassador teams, launching growth campaigns, hosting X Spaces, and leading community engagement on Telegram, Discord, and X. I offer strategic planning, campaign execution, and hands-on community scaling tailored for Web3 ecosystems.",
         experience: [
             {
                 role: "Marketing Lead", company: "StabilityXAI", year: "2025", details: [
                     "Grew project from $13K to $180K market cap through full-stack marketing initiatives.",
-                    "Built ambassador network of 15+ skilled creatives: content writers, shillers, raiders, designers, mods.",
+                    "Built ambassador network of 15+ skilled contributors: shillers, raiders, moderators.",
                     "Hosted consistent X Spaces to onboard users and build investor trust."
                 ]
             },
             {
-                role: "Marketing Lead", company: "derad Network", year: "2024–2025", details: [
+                role: "Marketing Lead", company: "Dread Network", year: "2024–2025", details: [
                     "Led awareness for the first ADBS-powered free-flight network.",
                     "Ran Twitter campaigns, Spaces, and guerrilla engagement strategies.",
                     "Developed community storytelling and helped shape early Web3 narratives."
@@ -130,26 +129,21 @@
             },
             {
                 role: "Ambassador", company: "CoinSwap & AquaCoin", year: "2024–Present", details: [
-                    "Created and shared content, memes, and threads.",
-                    "Supported ambassador sessions and giveaways.",
-                    "Amplified campaigns across social platforms."
+                    "Shared campaigns, memes, and threads across socials.",
+                    "Supported giveaway events and engagement drives.",
+                    "Provided feedback from grassroots users."
                 ]
             },
             {
-                role: "Content Writer & Moderator", company: "Gamp Gaming & Grrm Coin", year: "2024–2025", details: [
-                    "Crafted content for engagement and retention.",
-                    "Moderated channels to ensure safety and relevance."
-                ]
-            },
-            {
-                
+                role: "Community Manager", company: "Gamp Gaming & Grrm Coin", year: "2023–2024", details: [
+                    "Managed active channels and discussions.",
+                    "Monitored community needs and delivered solutions."
                 ]
             }
         ],
         skills: [
-            "Marketing Strategy", "Community manager", growth strategist",
-             "project manager,
-            "Team Coordination", "X Spaces Hosting"
+            "Web3 Marketing Strategy", "Community Management", "Project Management",
+            "Community Building", "Campaign Execution", "X Spaces Hosting", "Team Coordination"
         ],
         languages: ["English", "Arabic"]
     };
@@ -190,7 +184,6 @@
 
     document.getElementById("languages").textContent = userInfo.languages.join(" | ");
 
-    // Load 3D Logo with Three.js
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
