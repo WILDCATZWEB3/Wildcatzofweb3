@@ -1,110 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>WILDCATZ OF WEB3 - Portfolio</title>
-
-    <style>
-        body {
-            background: linear-gradient(135deg, red, cyan);
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-        }
-
-        h1 {
-            font-size: 26px;
-        }
-
-        p {
-            margin: 5px 0;
-        }
-
-        .social-links a {
-            display: block;
-            margin: 10px;
-            padding: 10px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            background: yellow;
-        }
-
-        .section-title {
-            font-weight: bold;
-            margin-top: 20px;
-            text-decoration: underline;
-        }
-
-        a {
-            word-break: break-word;
-        }
-
-        .logo-img {
-            width: 180px;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <img src="62633.jpeg" alt="Wildcatz Logo" class="logo-img" />
-    <h1 id="user-name"></h1>
-    <p>Email: <a id="user-email" style="color: cyan;"></a></p>
-
-    <div class="social-links">
-        <div class="section-title">Social Media Links</div>
-        <div id="social-links-container"></div>
-    </div>
-
-    <div class="section-title">Professional Summary</div>
-    <p id="summary"></p>
-
-    <div class="section-title">Experience</div>
-    <div id="experience"></div>
-
-    <div class="section-title">Skills</div>
-    <ul id="skills"></ul>
-
-    <div class="section-title">Languages</div>
-    <p id="languages"></p>
-
-    <div class="section-title">Proof of Work</div>
-    <p><a href="https://t.me/WILDCATZPOW" target="_blank" style="color: cyan;">Telegram Proof of Work</a></p>
-
-    <div class="section-title">Resume (PDF)</div>
-    <p><a href="wildcatzofweb3_resume.pdf" download style="color: cyan;">Download My Resume</a></p>
-</div>
-
 <script>
     const userInfo = {
-        name: "WILDCATZ OF WEB3",
+        name: "catz 🐈",
         email: "olasnetworking@gmail.com",
         socialMedia: [
-            { name: "Twitter/X", url: "https://x.com/wildcatzofweb4?s=21" },
+            { name: "Twitter/X", url: "https://x.com/catzweb3?s=21" },
             { name: "GitHub", url: "https://github.com/WILDCATZWEB3" },
             { name: "Telegram (Personal)", url: "https://t.me/wildcatzofweb3" },
             { name: "Discord", url: "https://discord.gg/GMtmHHqK" },
@@ -183,6 +82,3 @@
 
     document.getElementById("languages").textContent = userInfo.languages.join(" | ");
 </script>
-
-</body>
-</html>
